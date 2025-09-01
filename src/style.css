@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+:root { color-scheme: light dark; }
+html { scroll-behavior: smooth; }
+
+.aurora {
+  background: radial-gradient(1200px 500px at -10% -10%, rgba(168,85,247,.25), transparent),
+              radial-gradient(900px 400px at 110% 0%, rgba(59,130,246,.18), transparent),
+              radial-gradient(600px 400px at 50% 120%, rgba(16,185,129,.14), transparent);
+  position: absolute; inset: -1px; filter: blur(20px); pointer-events:none;
+  background-size: 200% 200%; animation: aurora 22s linear infinite;
+}
+.glass { background: rgba(255,255,255,0.08); backdrop-filter: blur(10px); }
+.glass-dark { background: rgba(2,6,23,0.6); backdrop-filter: blur(10px); }
