@@ -1,4 +1,6 @@
-// Theme init
+// Tema (persistencia)
+
+import './style.css';
 (() => {
   const theme = localStorage.getItem('theme');
   if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -6,11 +8,12 @@
   }
 })();
 
-// Handlers
 document.addEventListener('DOMContentLoaded', () => {
+  // Año footer
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // Toggle tema
   const themeBtn = document.getElementById('themeBtn');
   themeBtn?.addEventListener('click', () => {
     const html = document.documentElement;
@@ -18,24 +21,18 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
   });
 
+  // Menú móvil
   const menuBtn = document.getElementById('menuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
   menuBtn?.addEventListener('click', () => mobileMenu?.classList.toggle('hidden'));
 
-  // skill chips
-  document.querySelectorAll('.chip')?.forEach(el => {
-    el.classList.add('px-2','py-1','rounded-full','bg-white/60','dark:bg-white/5','border','border-slate-200','dark:border-slate-800');
-  });
-
-  // contact form
+  // Formulario
   const form = document.getElementById('contactForm');
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
     const fd = new FormData(form);
-    const data = Object.fromEntries(fd.entries());
-    console.log('Form data:', data);
-    const st = document.getElementById('formStatus');
-    st?.classList.remove('hidden');
+    console.log('Form data:', Object.fromEntries(fd.entries()));
+    document.getElementById('formStatus')?.classList.remove('hidden');
     form.reset();
   });
 });

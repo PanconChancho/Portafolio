@@ -12,178 +12,212 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/src/style.css">
+
   </head>
-  <body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 antialiased selection:bg-brand-300 selection:text-slate-900">
-    <div class="aurora -z-10"></div>
-    <div aria-hidden class="pointer-events-none fixed inset-0 -z-10 [mask-image:radial-gradient(75%_50%_at_50%_20%,black,transparent)]">
-      <div class="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-brand-500/20 to-transparent blur-2xl"></div>
+
+  <body class="page-body">
+    <div class="aurora"></div>
+    <div aria-hidden class="page-mask">
+      <div class="page-top-glow"></div>
     </div>
 
-    <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-white/40 dark:supports-[backdrop-filter]:bg-slate-900/40">
-      <nav class="mx-auto max-w-6xl px-4 sm:px-6">
-        <div class="flex items-center justify-between py-4">
-          <a href="#home" class="group inline-flex items-center gap-2">
-            <span class="relative grid place-items-center h-9 w-9 rounded-xl bg-gradient-to-br from-brand-400 to-brand-600 text-white shadow-glow">
-              <span class="text-lg font-bold">RC</span>
+    <!-- Header -->
+    <header class="site-header">
+      <nav class="container">
+        <div class="header-bar">
+          <a href="#home" class="brand group">
+            <span class="brand-badge">
+              <span class="brand-initials">RC</span>
             </span>
             <div>
-              <p class="font-semibold leading-tight">Rodrigo Contreras</p>
-              <p class="text-xs text-slate-500 dark:text-slate-400">Ingeniero en Informática</p>
+              <p class="brand-title">Rodrigo Contreras</p>
+              <p class="brand-subtitle">Ingeniero en Informática</p>
             </div>
           </a>
-          <div class="hidden md:flex items-center gap-6 font-medium">
-            <a href="#projects" class="hover:text-brand-600 dark:hover:text-brand-300">Proyectos</a>
-            <a href="#experience" class="hover:text-brand-600 dark:hover:text-brand-300">Experiencia</a>
-            <a href="#skills" class="hover:text-brand-600 dark:hover:text-brand-300">Habilidades</a>
-            <a href="#contact" class="hover:text-brand-600 dark:hover:text-brand-300">Contacto</a>
-            <a href="#" class="inline-flex items-center gap-2 rounded-xl border border-slate-300/70 dark:border-slate-700/70 px-4 py-2 text-sm hover:shadow-glow hover:border-brand-500/50">
+
+          <div class="nav-desktop">
+            <a href="#projects" class="nav-link">Proyectos</a>
+            <a href="#experience" class="nav-link">Experiencia</a>
+            <a href="#skills" class="nav-link">Habilidades</a>
+            <a href="#contact" class="nav-link">Contacto</a>
+
+            <a
+              class="btn btn-outline"
+              href="https://drive.google.com/file/d/1IUWPD_XtO9qN1gRqICujnRjN8Nwt9rov/view?usp=sharing"
+              target="_blank" rel="noopener"
+            >
               Descargar CV
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="opacity-80" aria-hidden>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="icon">
                 <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </a>
-            <button id="themeBtn" class="rounded-xl border border-slate-300/70 dark:border-slate-700/70 p-2 hover:shadow-glow" aria-label="Cambiar tema">
-              <svg id="sun" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden dark:inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v2m0 14v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/><circle cx="12" cy="12" r="4"/></svg>
-              <svg id="moon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"/></svg>
+
+            <button id="themeBtn" class="btn-icon" aria-label="Cambiar tema">
+              <svg id="sun" xmlns="http://www.w3.org/2000/svg" class="icon hidden dark:inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v2m0 14v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/><circle cx="12" cy="12" r="4"/></svg>
+              <svg id="moon" xmlns="http://www.w3.org/2000/svg" class="icon dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79Z"/></svg>
             </button>
           </div>
-          <button id="menuBtn" class="md:hidden rounded-xl border border-slate-300/70 dark:border-slate-700/70 p-2" aria-label="Abrir menú">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+
+          <button id="menuBtn" class="btn-icon md:hidden" aria-label="Abrir menú">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
           </button>
         </div>
-        <div id="mobileMenu" class="md:hidden hidden pb-4">
-          <div class="grid gap-2 rounded-2xl p-3 border border-slate-200 dark:border-slate-800 glass dark:glass-dark">
-            <a href="#projects" class="px-3 py-2 rounded-lg hover:bg-slate-100/60 dark:hover:bg-white/5">Proyectos</a>
-            <a href="#experience" class="px-3 py-2 rounded-lg hover:bg-slate-100/60 dark:hover:bg-white/5">Experiencia</a>
-            <a href="#skills" class="px-3 py-2 rounded-lg hover:bg-slate-100/60 dark:hover:bg-white/5">Habilidades</a>
-            <a href="#contact" class="px-3 py-2 rounded-lg hover:bg-slate-100/60 dark:hover:bg-white/5">Contacto</a>
+
+        <div id="mobileMenu" class="mobile-menu hidden">
+          <div class="card glass">
+            <a href="#projects" class="mobile-link">Proyectos</a>
+            <a href="#experience" class="mobile-link">Experiencia</a>
+            <a href="#skills" class="mobile-link">Habilidades</a>
+            <a href="#contact" class="mobile-link">Contacto</a>
           </div>
         </div>
       </nav>
     </header>
 
-    <section id="home" class="relative mx-auto max-w-6xl px-4 sm:px-6 pt-16 sm:pt-24">
-      <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+    <!-- Hero -->
+    <section id="home" class="container section-hero">
+      <div class="grid-hero">
         <div>
-          <span class="inline-flex items-center gap-2 rounded-full border border-brand-500/30 bg-brand-500/10 px-3 py-1 text-xs font-semibold text-brand-700 dark:text-brand-200">
-            <span class="relative inline-flex h-2 w-2"><span class="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span></span>
+          <span class="badge-availability">
+            <span class="ping-dot"><span class="ping"></span><span class="dot"></span></span>
             Disponible para proyectos freelance
           </span>
-          <h1 class="mt-5 text-4xl font-extrabold leading-tight sm:text-5xl">Hola, soy <span class="bg-gradient-to-r from-brand-500 to-indigo-400 bg-clip-text text-transparent">Rodrigo Contreras</span>.</h1>
-          <p class="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-prose">Ingeniero en Informática enfocado en <span class="font-semibold">soporte TI</span>, <span class="font-semibold">monitoreo (Nagios, Zabbix)</span> y <span class="font-semibold">desarrollo web</span> con Node.js, Laravel, Django y OpenAI.</p>
-          <div class="mt-6 flex flex-wrap items-center gap-3">
-            <a href="#projects" class="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 px-5 py-3 text-white shadow-glow hover:shadow-lg active:scale-[.99]">
+
+          <h1 class="hero-title">
+            Hola, soy <span class="grad-text">Rodrigo Contreras</span>.
+          </h1>
+
+          <p class="hero-sub">
+            Ingeniero en Informática con experiencia en <span class="font-semibold">soporte TI</span>, 
+            <span class="font-semibold">gestión de incidencias</span> y <span class="font-semibold">mantenimiento de infraestructura</span>. 
+            Formación reciente en <span class="font-semibold">bases de datos</span> y <span class="font-semibold">Power BI</span>. 
+            Interesado en ciberseguridad, nube y monitoreo de sistemas.
+          </p>
+
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">
               Ver proyectos
-              <svg class="h-4 w-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
             </a>
-            <a href="#contact" class="inline-flex items-center gap-2 rounded-xl border border-slate-300/70 dark:border-slate-700/70 px-5 py-3 hover:shadow-glow">
+            <a href="#contact" class="btn btn-outline">
               Escríbeme
-              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10"/><path d="M3 7l8.4 5.6a2 2 0 0 0 2.2 0L22 7"/><path d="M7 19h10"/></svg>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v10"/><path d="M3 7l8.4 5.6a2 2 0 0 0 2.2 0L22 7"/><path d="M7 19h10"/></svg>
             </a>
           </div>
-          <div class="mt-8 flex flex-wrap gap-3 text-sm text-slate-500 dark:text-slate-400">
-            <span class="inline-flex items-center gap-2 rounded-full bg-white/50 dark:bg-white/5 px-3 py-1 border border-slate-200 dark:border-slate-800"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 7l-8 5-8-5"/><path d="M4 7v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7"/></svg> <span>Respuesta en 24h</span></span>
-            <span class="inline-flex items-center gap-2 rounded-full bg-white/50 dark:bg-white/5 px-3 py-1 border border-slate-200 dark:border-slate-800"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> <span>Timezone: America/Santiago</span></span>
+
+          <div class="hero-meta">
+            <span class="chip chip-soft"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 7l-8 5-8-5"/><path d="M4 7v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7"/></svg> <span>Respuesta en 24h</span></span>
+            <span class="chip chip-soft"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> <span>Timezone: America/Santiago</span></span>
           </div>
         </div>
-        <div class="relative">
-          <div class="absolute -inset-6 -z-10 rounded-3xl bg-gradient-to-br from-brand-500/20 via-indigo-500/10 to-emerald-400/10 blur-2xl"></div>
-          <div class="relative aspect-square w-full max-w-md mx-auto rounded-[2rem] border border-slate-200/70 dark:border-slate-800/70 glass dark:glass-dark shadow-xl overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop" alt="Foto de portada" class="h-full w-full object-cover opacity-90">
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
-            <div class="absolute bottom-0 p-5">
-              <p class="text-sm text-slate-300">Último proyecto</p>
-              <h3 class="text-xl font-semibold">FutbolMatch — web app</h3>
-              <p class="text-slate-300/80">TailwindCSS • Node • MySQL</p>
+
+        <div class="hero-card-wrap">
+          <div class="hero-card-glow"></div>
+          <div class="hero-card card glass">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop" alt="Foto de portada" class="media">
+            <div class="media-gradient"></div>
+            <div class="media-caption">
+              <p class="cap-small">Último proyecto</p>
+              <h3 class="cap-title">FutbolMatch — web app</h3>
+              <p class="cap-tech">TailwindCSS • Node • MySQL</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="mx-auto max-w-6xl px-4 sm:px-6 mt-16">
-      <div class="grid place-items-center rounded-2xl border border-slate-200 dark:border-slate-800 glass dark:glass-dark p-4">
-        <p class="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400">Stack principal</p>
-        <div class="mt-3 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4 opacity-80">
-          <span class="px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-800">Node.js</span>
-          <span class="px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-800">Laravel</span>
-          <span class="px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-800">Django</span>
-          <span class="px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-800">MySQL</span>
-          <span class="px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-800">Tailwind</span>
-          <span class="px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-800">Nagios/Zabbix</span>
+    <!-- Stack -->
+    <section class="container section">
+      <div class="card glass center">
+        <p class="eyebrow">Stack principal</p>
+        <div class="stack-grid">
+          <span class="stack-chip">Node.js</span>
+          <span class="stack-chip">Laravel</span>
+          <span class="stack-chip">Django</span>
+          <span class="stack-chip">MySQL</span>
+          <span class="stack-chip">Tailwind</span>
+          <span class="stack-chip">Nagios/Zabbix</span>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="mx-auto max-w-6xl px-4 sm:px-6 mt-20">
-      <div class="flex items-end justify-between gap-6">
+    <!-- Proyectos -->
+    <section id="projects" class="container section">
+      <div class="section-head">
         <div>
-          <h2 class="text-2xl sm:text-3xl font-bold">Proyectos destacados</h2>
-          <p class="mt-2 text-slate-600 dark:text-slate-300">Selección de trabajos reales y prototipos. Código y demo cuando aplique.</p>
+          <h2 class="section-title">Proyectos destacados</h2>
+          <p class="section-sub">Selección de trabajos reales y prototipos. Código y demo cuando aplique.</p>
         </div>
-        <a href="#contact" class="hidden sm:inline-flex items-center gap-2 text-sm hover:text-brand-500">¿Tienes una idea? Conversemos <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14m-7-7l7 7-7 7"/></svg></a>
+        <a href="#contact" class="cta-ghost">¿Tienes una idea? Conversemos <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14m-7-7l7 7-7 7"/></svg></a>
       </div>
-      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <article class="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 glass dark:glass-dark">
-          <div class="relative aspect-[16/10] overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1400&auto=format&fit=crop" alt="Dashboard GLPI" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+
+      <div class="cards-grid">
+        <!-- GLPI -->
+        <article class="card project">
+          <div class="project-media">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1400&auto=format&fit=crop" alt="Dashboard GLPI" class="media">
+            <div class="media-gradient"></div>
           </div>
-          <div class="p-5">
-            <div class="flex items-center gap-2 text-xs text-slate-500"><span class="rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-300 px-2 py-0.5">Producción</span><span>2025</span></div>
-            <h3 class="mt-2 text-lg font-semibold">GLPI + Looker Studio</h3>
-            <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Pipeline de tickets y panel de métricas con filtros por categoría, SLA y mes.</p>
-            <div class="mt-3 flex flex-wrap gap-2 text-xs"><span class="px-2 py-1 rounded-full bg-white/60 dark:bg-white/5 border border-slate-200 dark:border-slate-800">BigQuery</span><span class="px-2 py-1 rounded-full bg-white/60 dark:bg-white/5 border border-slate-200 dark:border-slate-800">Looker Studio</span><span class="px-2 py-1 rounded-full bg-white/60 dark:bg-white/5 border border-slate-200 dark:border-slate-800">GLPI</span></div>
-          </div>
-        </article>
-        <article class="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 glass dark:glass-dark">
-          <div class="relative aspect-[16/10] overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1400&auto=format&fit=crop" alt="Nagios" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
-          </div>
-          <div class="p-5">
-            <div class="flex items-center gap-2 text-xs text-slate-500"><span class="rounded-full bg-indigo-500/15 text-indigo-600 dark:text-indigo-300 px-2 py-0.5">Infra</span><span>2024–2025</span></div>
-            <h3 class="mt-2 text-lg font-semibold">Monitoreo con Nagios</h3>
-            <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Alertas por correo, checks de ping/servicios, escalamiento y reportes ejecutivos.</p>
-            <div class="mt-3 flex flex-wrap gap-2 text-xs"><span class="px-2 py-1 rounded-full bg-white/60 dark:bg-white/5 border border-slate-200 dark:border-slate-800">Nagios</span><span class="px-2 py-1 rounded-full bg-white/60 dark:bg-white/5 border border-slate-200 dark:border-slate-800">Bash</span><span class="px-2 py-1 rounded-full bg-white/60 dark:bg-white/5 border border-slate-200 dark:border-slate-800">msmtp</span></div>
+          <div class="card-body">
+            <div class="meta-row"><span class="pill pill-green">Producción</span><span>2025</span></div>
+            <h3 class="card-title">GLPI + Looker Studio</h3>
+            <p class="card-text">Pipeline de tickets y panel de métricas con filtros por categoría, SLA y mes.</p>
+            <div class="tags"><span class="tag">BigQuery</span><span class="tag">Looker Studio</span><span class="tag">GLPI</span></div>
           </div>
         </article>
-        <article class="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 glass dark:glass-dark">
-          <div class="relative aspect-[16/10] overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1557825835-70d97c4aa567?q=80&w=1400&auto=format&fit=crop" alt="Ecommerce" class="h-full w-full object-cover transition duration-500 group-hover:scale-105">
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+
+        <!-- Nagios -->
+        <article class="card project">
+          <div class="project-media">
+            <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=1400&auto=format&fit=crop" alt="Nagios" class="media">
+            <div class="media-gradient"></div>
           </div>
-          <div class="p-5">
-            <div class="flex items-center gap-2 text-xs text-slate-500"><span class="rounded-full bg-pink-500/15 text-pink-600 dark:text-pink-300 px-2 py-0.5">Side project</span><span>2025</span></div>
-            <h3 class="mt-2 text-lg font-semibold">NVDR Store</h3>
-            <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">Tienda con catálogo dinámico, checkout y panel de administración.</p>
-            <div class="mt-3 flex flex-wrap gap-2 text-xs"><span class="px-2 py-1 rounded-full bg-white/60 dark:bg-white/5 border border-slate-200 dark:border-slate-800">Django</span><span class="px-2 py-1 rounded-full bg-white/60 dark:bg-white/5 border border-slate-200 dark:border-slate-800">Tailwind</span></div>
+          <div class="card-body">
+            <div class="meta-row"><span class="pill pill-indigo">Infra</span><span>2024–2025</span></div>
+            <h3 class="card-title">Monitoreo con Nagios</h3>
+            <p class="card-text">Alertas por correo, checks de ping/servicios, escalamiento y reportes ejecutivos.</p>
+            <div class="tags"><span class="tag">Nagios</span><span class="tag">Bash</span><span class="tag">msmtp</span></div>
+          </div>
+        </article>
+
+        <!-- NVDR Store -->
+        <article class="card project">
+          <div class="project-media">
+            <img src="https://images.unsplash.com/photo-1557825835-70d97c4aa567?q=80&w=1400&auto=format&fit=crop" alt="Ecommerce" class="media">
+            <div class="media-gradient"></div>
+          </div>
+          <div class="card-body">
+            <div class="meta-row"><span class="pill pill-pink">Side project</span><span>2025</span></div>
+            <h3 class="card-title">NVDR Store</h3>
+            <p class="card-text">Tienda con catálogo dinámico, checkout y panel de administración.</p>
+            <div class="tags"><span class="tag">Django</span><span class="tag">Tailwind</span></div>
           </div>
         </article>
       </div>
     </section>
 
-    <section id="experience" class="mx-auto max-w-6xl px-4 sm:px-6 mt-20">
-      <h2 class="text-2xl sm:text-3xl font-bold">Experiencia</h2>
-      <div class="mt-8 grid gap-6 lg:grid-cols-2">
-        <div class="relative rounded-2xl border border-slate-200 dark:border-slate-800 glass dark:glass-dark p-6">
-          <div class="flex items-center justify-between gap-4">
-            <h3 class="text-lg font-semibold">Soporte TI & Monitoreo</h3>
-            <span class="text-xs text-slate-500">2023 — 2025</span>
+    <!-- Experiencia -->
+    <section id="experience" class="container section">
+      <h2 class="section-title">Experiencia</h2>
+      <div class="grid-exp">
+        <div class="card glass p-6">
+          <div class="row-between">
+            <h3 class="card-title">Soporte TI & Monitoreo</h3>
+            <span class="muted">2023 — 2025</span>
           </div>
-          <ul class="mt-3 list-disc pl-5 space-y-1 text-slate-600 dark:text-slate-300 text-sm">
+          <ul class="bullets">
             <li>Implementación de Nagios Core con notificaciones por msmtp y escalamiento.</li>
             <li>Inventario automatizado con GLPI Agent; tableros Looker Studio.</li>
             <li>Documentación, scripts Bash y mejoras de SLA.</li>
           </ul>
         </div>
-        <div class="relative rounded-2xl border border-slate-200 dark:border-slate-800 glass dark:glass-dark p-6">
-          <div class="flex items-center justify-between gap-4">
-            <h3 class="text-lg font-semibold">Desarrollo web (freelance)</h3>
-            <span class="text-xs text-slate-500">2024 — 2025</span>
+
+        <div class="card glass p-6">
+          <div class="row-between">
+            <h3 class="card-title">Desarrollo web (freelance)</h3>
+            <span class="muted">2024 — 2025</span>
           </div>
-          <ul class="mt-3 list-disc pl-5 space-y-1 text-slate-600 dark:text-slate-300 text-sm">
+          <ul class="bullets">
             <li>Landing pages con Tailwind y formularios de contacto.</li>
             <li>APIs Node/Express con MySQL y autenticación.</li>
             <li>Prototipos con OpenAI para asistentes internos.</li>
@@ -192,87 +226,88 @@
       </div>
     </section>
 
-    <section id="skills" class="mx-auto max-w-6xl px-4 sm:px-6 mt-20">
-      <h2 class="text-2xl sm:text-3xl font-bold">Habilidades</h2>
-      <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 glass dark:glass-dark p-5">
-          <p class="text-sm font-semibold mb-3">Backend</p>
-          <div class="flex flex-wrap gap-2 text-sm">
-            <span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">Laravel</span><span class="chip">Django</span><span class="chip">REST</span>
-          </div>
+    <!-- Habilidades -->
+    <section id="skills" class="container section">
+      <h2 class="section-title">Habilidades</h2>
+      <div class="grid-skills">
+        <div class="card glass p-5">
+          <p class="label">Backend</p>
+          <div class="chips"><span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">Laravel</span><span class="chip">Django</span><span class="chip">REST</span></div>
         </div>
-        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 glass dark:glass-dark p-5">
-          <p class="text-sm font-semibold mb-3">Frontend</p>
-          <div class="flex flex-wrap gap-2 text-sm">
-            <span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Tailwind</span><span class="chip">JavaScript</span><span class="chip">React (básico)</span>
-          </div>
+        <div class="card glass p-5">
+          <p class="label">Frontend</p>
+          <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Tailwind</span><span class="chip">JavaScript</span><span class="chip">React (básico)</span></div>
         </div>
-        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 glass dark:glass-dark p-5">
-          <p class="text-sm font-semibold mb-3">Data & DevOps</p>
-          <div class="flex flex-wrap gap-2 text-sm">
-            <span class="chip">MySQL</span><span class="chip">BigQuery</span><span class="chip">Looker Studio</span><span class="chip">Docker (básico)</span>
-          </div>
+        <div class="card glass p-5">
+          <p class="label">Data & DevOps</p>
+          <div class="chips"><span class="chip">MySQL</span><span class="chip">BigQuery</span><span class="chip">Looker Studio</span><span class="chip">Docker (básico)</span></div>
         </div>
-        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 glass dark:glass-dark p-5">
-          <p class="text-sm font-semibold mb-3">Monitoreo</p>
-          <div class="flex flex-wrap gap-2 text-sm">
-            <span class="chip">Nagios</span><span class="chip">Zabbix</span><span class="chip">GLPI Agent</span><span class="chip">Bash</span>
-          </div>
+        <div class="card glass p-5">
+          <p class="label">Monitoreo</p>
+          <div class="chips"><span class="chip">Nagios</span><span class="chip">Zabbix</span><span class="chip">GLPI Agent</span><span class="chip">Bash</span></div>
         </div>
-        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 glass dark:glass-dark p-5">
-          <p class="text-sm font-semibold mb-3">Cloud & AI</p>
-          <div class="flex flex-wrap gap-2 text-sm">
-            <span class="chip">OpenAI</span><span class="chip">APIs</span><span class="chip">Vercel/Render</span>
-          </div>
+        <div class="card glass p-5">
+          <p class="label">Cloud & AI</p>
+          <div class="chips"><span class="chip">OpenAI</span><span class="chip">APIs</span><span class="chip">Vercel/Render</span></div>
         </div>
-        <div class="rounded-2xl border border-slate-200 dark:border-slate-800 glass dark:glass-dark p-5">
-          <p class="text-sm font-semibold mb-3">Plus</p>
-          <div class="flex flex-wrap gap-2 text-sm">
-            <span class="chip">Power BI</span><span class="chip">Exportación aérea</span><span class="chip">Soporte nivel 1/2</span>
-          </div>
+        <div class="card glass p-5">
+          <p class="label">Plus</p>
+          <div class="chips"><span class="chip">Power BI</span><span class="chip">Exportación aérea</span><span class="chip">Soporte nivel 1/2</span></div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="mx-auto max-w-6xl px-4 sm:px-6 mt-20 mb-24">
-      <div class="grid gap-8 lg:grid-cols-2">
+    <!-- Contacto -->
+    <section id="contact" class="container section mb-24">
+      <div class="grid-contact">
         <div>
-          <h2 class="text-2xl sm:text-3xl font-bold">Hablemos</h2>
-          <p class="mt-2 text-slate-600 dark:text-slate-300 max-w-prose">¿Buscas ayuda con soporte TI, monitoreo o desarrollo web? Cuéntame tu idea y te respondo con una propuesta.</p>
-          <div class="mt-6 grid gap-3 text-sm">
-            <a class="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 px-4 py-3 hover:shadow-glow" href="mailto:tu-email@dominio.com"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z" opacity=".1"/><path d="M21 7l-8.4 5.6a2 2 0 0 1-2.2 0L2 7"/></svg> tu-email@dominio.com</a>
-            <a class="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 px-4 py-3" href="#"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 10v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-6"/><path d="M12 10v4"/><path d="M9 7h6"/></svg> Descargar CV (PDF)</a>
+          <h2 class="section-title">Hablemos</h2>
+          <p class="section-sub">¿Buscas ayuda con soporte TI, monitoreo o desarrollo web? Cuéntame tu idea y te respondo con una propuesta.</p>
+          <div class="contact-links">
+            <a class="btn btn-outline" href="mailto:Rodricontre1234@gmail.com">Rodricontre1234@gmail.com</a>
+            <a class="btn" href="https://drive.google.com/file/d/1IUWPD_XtO9qN1gRqICujnRjN8Nwt9rov/view?usp=sharing" target="_blank" rel="noopener">
+              Descargar CV (PDF)
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 10v6a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-6"/><path d="M12 10v4"/><path d="M9 7h6"/></svg>
+            </a>
           </div>
         </div>
-        <form id="contactForm" class="rounded-2xl border border-slate-200 dark:border-slate-800 glass dark:glass-dark p-6 grid gap-4">
-          <div class="grid gap-2">
-            <label for="name" class="text-sm font-medium">Nombre</label>
-            <input id="name" name="name" required class="rounded-xl border border-slate-300/70 dark:border-slate-700/70 bg-white/80 dark:bg-white/5 px-4 py-3 outline-none focus:ring-2 focus:ring-brand-500/40" placeholder="Tu nombre" />
+
+        <form id="contactForm" class="card glass form">
+          <div class="field">
+            <label for="name" class="label">Nombre</label>
+            <input id="name" name="name" required class="input" placeholder="Tu nombre" />
           </div>
-          <div class="grid gap-2">
-            <label for="email" class="text-sm font-medium">Correo</label>
-            <input id="email" name="email" type="email" required class="rounded-xl border border-slate-300/70 dark:border-slate-700/70 bg-white/80 dark:bg-white/5 px-4 py-3 outline-none focus:ring-2 focus:ring-brand-500/40" placeholder="correo@ejemplo.com" />
+          <div class="field">
+            <label for="email" class="label">Correo</label>
+            <input id="email" name="email" type="email" required class="input" placeholder="correo@ejemplo.com" />
           </div>
-          <div class="grid gap-2">
-            <label for="message" class="text-sm font-medium">Mensaje</label>
-            <textarea id="message" name="message" rows="4" required class="rounded-xl border border-slate-300/70 dark:border-slate-700/70 bg-white/80 dark:bg-white/5 px-4 py-3 outline-none focus:ring-2 focus:ring-brand-500/40" placeholder="Cuéntame tu proyecto..."></textarea>
+          <div class="field">
+            <label for="message" class="label">Mensaje</label>
+            <textarea id="message" name="message" rows="4" required class="textarea" placeholder="Cuéntame tu proyecto..."></textarea>
           </div>
-          <button class="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 px-5 py-3 text-white shadow-glow hover:shadow-lg active:scale-[.99]">
+          <button class="btn btn-primary justify-center">
             Enviar mensaje
-            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
           </button>
-          <p id="formStatus" class="text-sm text-emerald-600 dark:text-emerald-400 hidden">¡Gracias! Te responderé pronto.</p>
+          <p id="formStatus" class="form-status hidden">¡Gracias! Te responderé pronto.</p>
         </form>
       </div>
     </section>
 
-    <footer class="border-t border-slate-200 dark:border-slate-800/80">
-      <div class="mx-auto max-w-6xl px-4 sm:px-6 py-8 text-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-bar">
         <p>© <span id="year"></span> Rodrigo Contreras. Hecho con Tailwind.</p>
-        <div class="flex items-center gap-3 text-slate-500">
-          <a class="hover:text-brand-500" href="#" aria-label="GitHub"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.69c-2.78.61-3.37-1.34-3.37-1.34-.46-1.18-1.12-1.5-1.12-1.5-.92-.63.07-.62.07-.62 1.02.07 1.55 1.05 1.55 1.05.9 1.54 2.36 1.1 2.94.84.09-.65.35-1.1.63-1.35-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.9-1.29 2.73-1.02 2.73-1.02.55 1.38.2 2.4.1 2.65.64.7 1.02 1.59 1.02 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.86v2.76c0 .26.18.57.69.48A10 10 0 0 0 12 2Z"/></svg></a>
-          <a class="hover:text-brand-500" href="#" aria-label="LinkedIn"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.05c.53-1 1.82-2.2 3.75-2.2 4 0 4.7 2.6 4.7 6V24h-4v-7.2c0-1.7-.03-3.9-2.4-3.9-2.4 0-2.8 1.9-2.8 3.8V24h-4V8z"/></svg></a>
-          <a class="hover:text-brand-500" href="mailto:tu-email@dominio.com" aria-label="Email"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z" opacity=".1"/><path d="M21 7l-8.4 5.6a2 2 0 0 1-2.2 0L2 7"/></svg></a>
+        <div class="footer-icons">
+          <a class="icon-link" href="https://github.com/PanconChancho" aria-label="GitHub">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.69c-2.78.61-3.37-1.34-3.37-1.34-.46-1.18-1.12-1.5-1.12-1.5-.92-.63.07-.62.07-.62 1.02.07 1.55 1.05 1.55 1.05.9 1.54 2.36 1.1 2.94.84.09-.65.35-1.1.63-1.35-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.9-1.29 2.73-1.02 2.73-1.02.55 1.38.2 2.4.1 2.65.64.7 1.02 1.59 1.02 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.86v2.76c0 .26.18.57.69.48A10 10 0 0 0 12 2Z"/></svg>
+          </a>
+          <a class="icon-link" href="http://www.linkedin.com/in/rodrigo-contreras-70b71a181" aria-label="LinkedIn">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8h4V24h-4V8zm7.5 0h3.8v2.2h.05c.53-1 1.82-2.2 3.75-2.2 4 0 4.7 2.6 4.7 6V24h-4v-7.2c0-1.7-.03-3.9-2.4-3.9-2.4 0-2.8 1.9-2.8 3.8V24h-4V8z"/></svg>
+          </a>
+          <a class="icon-link" href="mailto:Rodricontre1234@gmail.com" aria-label="Email">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z" opacity=".1"/><path d="M21 7l-8.4 5.6a2 2 0 0 1-2.2 0L2 7"/></svg>
+          </a>
         </div>
       </div>
     </footer>
